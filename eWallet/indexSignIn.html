@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylePop.css">
+    <link rel="stylesheet" href="style3.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <title>eWallet</title>
+    <script>   
+        function welcome() {   
+        window.open("Work/Login.html");  
+        }   
+        </script> 
+
+</head>
+<body>
+    <nav class="nav-bar">
+        <img id="eWalletImg" src="./Work/eWallet.png" alt="">
+        <div class="nav-items">
+            <a href="./Work/Login.html" target="blank">Home</a>
+            <a href="Work\adminPanel\userPanel.html">YourPanel</a>
+            <a href="./topUpZoneLocator.html">SearchUs</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <button class= "button" type="text" id="showUserName"></button>
+    </nav>
+    <header class="hero-section">
+       <div class="hero-text-container">
+           <h1>
+               next generation</br>
+               digital Banking
+           </h1>
+           <button class="test">
+               request Invite
+           </button>
+       </div>
+  <div class="popup">
+    <header>
+      <span>Share eWallet and get 10 eWalletPoints!</span>
+      <div class="close"><i class="uil uil-times"></i></div>
+    </header>
+    <div class="content">
+      <p>Share this link via</p>
+      <ul class="icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+      </ul>
+      <p>Or User Referral Code</p>
+      <div class="field">
+        <i class="url-icon uil uil-link"></i>
+        <div type="text" id="refer"></div>
+        <!-- <button>Copy</button> -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const viewBtn = document.querySelector(".test"),
+    popup = document.querySelector(".popup"),
+    close = popup.querySelector(".close"),
+    field = popup.querySelector(".field"),
+    input = field.querySelector("refer"),
+    copy = field.querySelector("button");
+
+    viewBtn.onclick = ()=>{
+      popup.classList.toggle("show");
+    }
+    close.onclick = ()=>{
+      viewBtn.click();
+    }
+
+    // copy.onclick = ()=>{
+    //   input.select(); //select input value
+    //   if(document.execCommand("copy")){ //if the selected text copy
+    //     field.classList.add("active");
+    //     copy.innerText = "Copied";
+    //     setTimeout(()=>{
+    //       window.getSelection().removeAllRanges(); //remove selection from document
+    //       field.classList.remove("active");
+    //       copy.innerText = "Copy";
+    //     }, 3000);
+    //   }
+    // }
+  </script>
+       <div class="hero-image-container">
+           <img src="/Work/images/image-mockups.png">
+       </div>
+    </header>
+</body>
+<script type="module" src="./indexSignInBrain.js">
+</script>
+</html>

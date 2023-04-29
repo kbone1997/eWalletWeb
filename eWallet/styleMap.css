@@ -1,0 +1,47 @@
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(
+        -45deg,
+        #ff6596,
+        #60bef8,
+        #d88cff
+    );
+    animation: animatorGradient 10s infinite linear;
+    background-size: 300% 300%;
+    position: relative;
+}
+#map {
+    height: 80vh;
+    width: 150vh;
+    align-items: center;
+    margin-left: 10%;
+    border-radius: 28px;
+}
+#zone {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10%;
+    color: hsl(0, 0%, 97%);
+}
+
+@keyframes animatorGradient {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 50% 0;
+    }
+}
+

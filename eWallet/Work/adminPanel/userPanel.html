@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWalletUserPanel</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style1.css">
+    
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="cash"></ion-icon>
+                        </span>
+                        <span class="title">eWallet</span>
+                        <span class="title">userPanel</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title" onclick="previous()">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <button id="logout" class="title">Sign Out</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                    <div id="showUserName"></div>
+                    <button  id = "refreshButton">Refresh</button>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="num">Payment</div>
+                        <div class="cardName">choose Method</div>
+                    </div>
+                    <div class="popup">
+                        <header>
+                          <span>Choose Method</span>
+                          <div class="close"><i class="uil uil-times"></i></div>
+                        </header>
+                        <div class="content">
+                          <ul >
+                            <a href="#"><i >bKash</i></a>
+                            <a href="#"><i >DBBL</i></a>
+                            <a href="#"><i >BracBank</i></a>
+                            <a href="../../payment.html"><i >eWallet</i></a>
+                          </ul>
+                          <input class="field" id="payment">Choose Method</input>
+                          <button id="button_pay">MakePayment</button>
+                        </div>
+                      </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="card"></ion-icon>
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="cashOut">Cash Out</div>
+                        <div class="cardName">Locate Us</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+            
+
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="recharge">Recharge</div>
+                        <div class="cardName">Choose Method</div>
+                    </div>
+                    <div class="popup2">
+                        <header>
+                          <span>Choose Method</span>
+                          <div class="close2"><i class="uil uil-times"></i></div>
+                        </header>
+                        <div class="content">
+                          <ul id="rechargeCardText">
+                            <a href="#"><i >bKash</i></a>
+                            <a href="#"><i >DBBL</i></a>
+                            <a href="#"><i >BracBank</i></a>
+                          </ul>
+                        <button id="button_rech">Recharge</button>
+                        </div>
+                      </div>
+                    
+
+                    <div class="iconBx">
+                        <ion-icon name="Wallet"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="points">$</div>
+                        <div class="cardName">eWalletPoints</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers" id="sendMoney">Send Money</div>
+                        <div class="cardName">eWallet Only</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="arrow-redo-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>History</h2>
+                        
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>Payment</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Dell Laptop</td>
+                                <td>$110</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Apple Watch</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Addidas Shoes</td>
+                                <td>$620</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Dell Laptop</td>
+                                <td>$110</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Apple Watch</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Addidas Shoes</td>
+                                <td>$620</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Paid</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="text" id="test">
+                
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        const viewBtn = document.querySelector("#num");
+        const viewRecharge = document.querySelector('#recharge')
+        popup = document.querySelector(".popup"),
+        popup2 = document.querySelector(".popup2"),
+        close = popup.querySelector(".close"),
+        close2 = popup.querySelector(".close2"),
+        field = popup.querySelector(".field"),
+        field2 = popup.querySelector(".field2"),
+        input = field.querySelector("input"),
+        input2 = field.querySelector("input2"),
+        copy = field.querySelector("button");
+        copy2 = field.querySelector("button2");
+    
+        viewBtn.onclick = ()=>{
+          popup.classList.toggle("show");
+        }
+        viewRecharge.onclick = ()=>{
+          popup2.classList.toggle("show");
+        }
+        close.onclick = ()=>{
+          viewBtn.click();
+        }
+        // close2.onclick = ()=>{
+        //   viewRecharge.click();
+        // }
+    
+        copy.onclick = ()=>{
+          input.select(); //select input value
+          if(document.execCommand("copy")){ //if the selected text copy
+            field.classList.add("active");
+            copy.innerText = "Copied";
+            setTimeout(()=>{
+              window.getSelection().removeAllRanges(); //remove selection from document
+              field.classList.remove("active");
+              copy.innerText = "Copy";
+            }, 3000);
+          }
+        }
+
+        // copy2.onclick = ()=>{
+        //   input2.select(); //select input value
+        //   if(document.execCommand("copy")){ //if the selected text copy
+        //     field2.classList.add("active");
+        //     copy2.innerText = "Copied";
+        //     setTimeout(()=>{
+        //       window.getSelection().removeAllRanges(); //remove selection from document
+        //       field2.classList.remove("active");
+        //       copy2.innerText = "Copy";
+        //     }, 3000);
+        //   }
+        // }
+      </script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="./userPanelBrain.js"></script>
+</body>
+    <!-- <script type="module" src="./userPanelBrain.js"></script> -->
+
+</html>
